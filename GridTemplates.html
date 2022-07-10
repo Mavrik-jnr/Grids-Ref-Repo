@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Using CSS Grid</title>
+    <style>
+      body {
+        color: #fff;
+        font-family: "Nunito Semibold";
+        text-align: center;
+        height: 100vh;
+      }
+      #content {
+        display: grid;
+        /* grid-template-columns: 30% 20% 50%; using pecentages */
+        /* grid-template-columns: 1fr 2fr 1fr;  This uses available spacing like flex grow and automatically computes fractions of space available for items in columns*/
+
+        /* repeat is a built in that repeats, you can also add more templates after function */
+        grid-template-columns: repeat(3, 1fr);
+
+        /* This property below focuses on automatically created rows, it will treat overflowing content from defined columns and set the height of these rows */
+        grid-auto-rows: minmax(200px, auto);
+
+        /* This property below explicitly sets the sizes of rows, and creates a template for content to span */
+        grid-template-rows: repeat(3, minmax(200px, auto));
+
+        column-gap: 16px;
+        row-gap: 16px;
+
+        /* Together */
+        gap: 16px;
+
+        max-width: 960px;
+        margin: 0 auto;
+      }
+      #content div {
+        background: #3bbced;
+        padding: 30px;
+      }
+      #content div:nth-child(even) {
+        background: #777;
+        padding: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="content">
+      <div>1</div>
+      <div>2</div>
+      <div>
+        3 Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga
+        reiciendis quod error facilis quibusdam dolorem corrupti cum harum hic,
+        consequatur eum incidunt esse ipsa, quisquam blanditiis enim ex
+        suscipit. Sapiente!
+      </div>
+      <div>4</div>
+      <div>5</div>
+      <div>6</div>
+      <div>7</div>
+      <div>8</div>
+      <div>9</div>
+    </div>
+  </body>
+</html>

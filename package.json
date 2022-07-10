@@ -1,0 +1,5 @@
+{
+  "devDependencies": {
+    "prettier-plugin-css-grid": "^0.1.2"
+  }
+}
